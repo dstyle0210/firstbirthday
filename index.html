@@ -6,15 +6,60 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>원도진 아기의 돌잔치에 초대합니다.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=YlUSSWgcNGNamSdjQWLk"></script>
+    <style>
+        *{margin:0;padding:0;list-style:none;}
+        a{color:#333;text-decoration:none;}
+        body{font-family: 'Noto Sans KR', sans-serif;}
+        .visual{font-size:1px;line-height:1px;border-bottom:5px solid #333;}
+        .visual img{width:100%; height:auto;}
+        .phone{display:flex;background-color: #f5f5f5;}
+        .phone a{flex:1;box-sizing:border-box;padding:10px 0;width:45%;height:50px;text-align:center;font-size:20px;color:#333;}
+        .map{height:300px;}
+        #Map{height:300px;}
+        #Map .markerOverlay{padding:10px;width:150px;font-size:14px;}
+        #Map .markerOverlay p{font-size:12px;}
+    </style>
 </head>
 <body>
-폰트어썸으로 가져오고..
 <div class="wrap">
-    <div class="visual"></div>
-    <div class="map">
-        사진으로 넣고, 링크로 연결
-        http://naver.me/xYi9nwAW
+    <div class="visual"><img src="./temp/s1.jpg" alt="" /></div>
+    <div class="phone">
+        <a href="tel:01092040438"><i class="fa fa-address-card" aria-hidden="true"></i> 아빠(원용봉)</a>
+        <a href="tel:01006140739"><i class="fa fa-address-card" aria-hidden="true"></i> 엄마(홍미영)</a>
     </div>
+    <div class="map">
+        <div id="Map"></div>
+
+        <script type="text/javascript">
+            $(function(){
+                var mapOptions = {
+                    center: new naver.maps.LatLng(37.5761214, 126.8891256),
+                    zoom: 10
+                };
+                var map = new naver.maps.Map('Map', mapOptions);
+                var marker = new naver.maps.Marker({
+                    position: new naver.maps.LatLng(37.5761214, 126.8891256),
+                    map: map
+                });
+                var contentString = [
+                    '<div class="markerOverlay">',
+                    '<h4>용산드마리스</h4>',
+                    '<p class="address">서울 용산구 청파로 74(한강로동 18-9), 전자랜드 신관5층</p>',
+                    '<p class="tel">문의전화 : <a href="tel:15882520">1588-2520</a></p>',
+                    '</div>'
+                ].join('');
+                var infowindow = new naver.maps.InfoWindow({
+                    content: contentString,
+                });
+                infowindow.open(map, marker);
+            });
+        </script>
+    </div>
+    http://naver.me/xYi9nwAW
     <div class="photo">
         swiper
     </div>
