@@ -14,26 +14,43 @@
         *{margin:0;padding:0;list-style:none;}
         a{color:#333;text-decoration:none;}
         body{font-family: 'Noto Sans KR', sans-serif;}
+        .wrap{padding-bottom:50px;}
         .visual{font-size:1px;line-height:1px;border-bottom:5px solid #333;}
         .visual img{width:100%; height:auto;}
-        .phone{display:flex;background-color: #f5f5f5;}
-        .phone a{flex:1;box-sizing:border-box;padding:10px 0;width:45%;height:50px;text-align:center;font-size:20px;color:#333;}
+
         .map{height:300px;}
         #Map{height:300px;}
         #Map .markerOverlay{padding:10px;width:150px;font-size:14px;}
         #Map .markerOverlay p{font-size:12px;}
+
+        /*! 전화번호 */
+        .phone{position:fixed;bottom:0;left:0;width:100%;display:flex;background-color: #fff;}
+        /*
+         노란색 : #e8c93d
+         빨간색 : #b51105
+         */
+        .phone a{flex:1;box-sizing:border-box;padding:10px 0;width:45%;height:50px;text-align:center;font-size:20px;color:#333;}
+        .phone a:nth-child(1){border-top:3px solid #e8c93d;}
+        .phone a:nth-child(2){border-top:3px solid #b51105;}
     </style>
 </head>
 <body>
 <div class="wrap">
     <div class="visual"><img src="./temp/s1.jpg" alt="" /></div>
-    <div class="phone">
-        <a href="tel:01092040438"><i class="fa fa-address-card" aria-hidden="true"></i> 아빠(원용봉)</a>
-        <a href="tel:01006140739"><i class="fa fa-address-card" aria-hidden="true"></i> 엄마(홍미영)</a>
+    <div class="desc">
+        <h2 style="text-align:center;">모시는 글</h2>
+        <p>저희에게 가장 큰 선물인 도진이의 첫돌을 맞이하게 되었습니다.</p>
+        <p>마음으로 언제나 함께 해주신 가족과 함께 세상에 태어나 첫번째 생일을 함께 하고자 합니다.</p>
+        <p>꼭 오셔서 멋지고 행복한 아이가 되도록 좋은 말씀 해주시고, 함께 웃어주셨으면 합니다.</p>
+        <p class="sign">아빠 원용봉, 엄마 홍미영 올림</p>
     </div>
+
+    <div class="photo">
+        swiper
+    </div>
+
     <div class="map">
         <div id="Map"></div>
-
         <script type="text/javascript">
             $(function(){
                 var mapOptions = {
@@ -59,11 +76,14 @@
             });
         </script>
     </div>
-    http://naver.me/xYi9nwAW
-    <div class="photo">
-        swiper
+    <style>
+        .maplink a{display:inline-block;box-sizing:border-box;padding:12px 0;width:100%;height:40px; background: #333; color:#fff;font-size:14px;line-height:1;text-align:center;}
+    </style>
+    <div class="maplink"><a href="http://naver.me/xYi9nwAW" target="_blank"><i class="fa fa-map" aria-hidden="true"></i> 네이버지도로 보기</a></div>
+    <div class="phone">
+        <a href="tel:01092040438"><i class="fa fa-phone" aria-hidden="true"></i> 아빠(원용봉)</a>
+        <a href="tel:01062140739"><i class="fa fa-phone" aria-hidden="true"></i> 엄마(홍미영)</a>
     </div>
-
 </div>
 </body>
 </html>
