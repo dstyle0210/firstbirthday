@@ -12,19 +12,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=YlUSSWgcNGNamSdjQWLk"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.jquery.min.js"></script>
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.jquery.min.js"></script>-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.1.1/masonry.pkgd.min.js"></script>
     <style>
         *{margin:0;padding:0;list-style:none;}
         a{color:#333;text-decoration:none;}
+        .top{position:absolute;top:0;left:0;width:100%;height:30px;background:url('temp/bg.png') repeat-x left top;}
+        .bot{position:absolute;bottom:0;left:0;width:100%;height:30px;background:url('temp/bg2.png') repeat-x left bottom;}
+
         .wrap{padding-bottom:50px;}
         .visual{height:400px;background:url('temp/s1.jpg') no-repeat center top;background-size:auto 400px;}
         .visual img{width:100%; height:auto;}
         .desc{position:relative;padding:15px 0;background-color: #f5f5f5;background:url('temp/bg_desc.gif') repeat-x;text-align:center;background-size:auto 300px;}
-        .desc .top{position:absolute;top:0;left:0;width:100%;height:30px;background:url('temp/bg.png') repeat-x left top;}
-        .desc .bot{position:absolute;bottom:0;left:0;width:100%;height:30px;background:url('temp/bg2.png') repeat-x left bottom;}
         .desc img{width:auto;height:300px;}
-        .map{height:300px;}
-        #Map{height:300px;}
+
+
+        .map{margin:0 auto;width:100%;height:300px;padding-bottom:20px;background-color: #f5f5f5;}
+        #Map{margin:0 auto;width:90%;height:300px;background-color: #f5f5f5;border:1px solid #ccc;}
         #Map .markerOverlay{padding:10px;width:150px;font-size:14px;}
         #Map .markerOverlay p{font-size:12px;}
 
@@ -41,6 +45,14 @@
         .photo{padding:10px;padding-bottom:20px;box-sizing:border-box;width:100%;border-bottom:1px dashed #666;}
         .photo .swiper-slide{width:100%;text-align:center;}
         .photo img{width:auto; height:225px;}
+
+
+        .photozone{position:relative;padding:50px 0;}
+        .photozone h2{padding-bottom:20px;text-align:center;}
+        .marsony{width:100%;box-sizing:border-box;}
+        .marsony img{width:100%; height:auto;border:1px solid #ccc;}
+        .marsony .grid-item{margin-top:5px;width:48%;}
+        .marsony .grid{margin:0 auto;width:95%;}
     </style>
 </head>
 <body>
@@ -53,12 +65,43 @@
     </div>
 
     <!-- Slider main container -->
-    <h2 style="padding-top:20px;text-align:center;"><img src="temp/tac2.png" alt=""></h2>
+    <div class="photozone">
+        <div class="top"></div>
+        <div class="bot"></div>
+        <h2><img src="temp/tac2.png" alt=""></h2>
+        <div class="marsony">
+            <ul class="grid">
+                <li class="grid-item"><img src="temp/d1.jpg" alt=""></li>
+                <li class="grid-item"><img src="temp/d2.jpg" alt=""></li>
+                <li class="grid-item"><img src="temp/d3.jpg" alt=""></li>
+                <li class="grid-item"><img src="temp/d4.jpg" alt=""></li>
+                <li class="grid-item"><img src="temp/d5.jpg" alt=""></li>
+                <li class="grid-item"><img src="temp/d6.jpg" alt=""></li>
+                <li class="grid-item"><img src="temp/d7.jpg" alt=""></li>
+                <li class="grid-item"><img src="temp/d8.jpg" alt=""></li>
+                <li class="grid-item"><img src="temp/d9.jpg" alt=""></li>
+                <li class="grid-item"><img src="temp/d10.jpg" alt=""></li>
+                <li class="grid-item"><img src="temp/d11.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+    $(function(){
+        var $grid = $('.grid').masonry({
+            // options
+            itemSelector: '.grid-item',
+            gutter: 10,
+            percentPosition: true
+        });
+    });
+    </script>
+<!--
     <div class="photo">
         <div class="swiper-container">
-            <!-- Additional required wrapper -->
+            &lt;!&ndash; Additional required wrapper &ndash;&gt;
             <div class="swiper-wrapper">
-                <!-- Slides -->
+                &lt;!&ndash; Slides &ndash;&gt;
                 <div class="swiper-slide"><img src="temp/r3.jpg" alt=""></div>
                 <div class="swiper-slide"><img src="temp/t1.jpg" alt=""></div>
                 <div class="swiper-slide"><img src="temp/r2.jpg" alt=""></div>
@@ -68,10 +111,10 @@
                 <div class="swiper-slide"><img src="temp/t5.jpg" alt=""></div>
                 <div class="swiper-slide"><img src="temp/r1.jpg" alt=""></div>
             </div>
-            <!-- If we need pagination -->
+            &lt;!&ndash; If we need pagination &ndash;&gt;
             <div class="swiper-pagination"></div>
 
-            <!-- If we need navigation buttons -->
+            &lt;!&ndash; If we need navigation buttons &ndash;&gt;
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
@@ -85,7 +128,7 @@
             });
         });
 
-    </script>
+    </script>-->
 
     <h2 style="padding:20px 0;text-align:center;background-color: #f5f5f5;"><img src="temp/tac3.png" alt=""></h2>
     <div class="map">
