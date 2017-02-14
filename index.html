@@ -16,13 +16,13 @@
     <style>
         *{margin:0;padding:0;list-style:none;}
         a{color:#333;text-decoration:none;}
-        body{font-family: 'Noto Sans KR', sans-serif;}
         .wrap{padding-bottom:50px;}
-        .visual{font-size:1px;line-height:1px;padding-bottom:30px;background:url('temp/bg.gif') repeat-x bottom left;}
+        .visual{height:400px;background:url('temp/s1.jpg') no-repeat center top;background-size:auto 400px;}
         .visual img{width:100%; height:auto;}
-        .desc{padding:20px 10px;font-family: 'Nanum Pen Script'!important;border-bottom:1px dashed #666;background-color: #f5f5f5;}
-        .desc p{padding-bottom:20px;font-size:18px;}
-        .desc p.sign{text-align:right;color:#666;}
+        .desc{position:relative;padding:15px 0;background-color: #f5f5f5;background:url('temp/bg_desc.gif') repeat-x;text-align:center;background-size:auto 300px;}
+        .desc .top{position:absolute;top:0;left:0;width:100%;height:30px;background:url('temp/bg.png') repeat-x left top;}
+        .desc .bot{position:absolute;bottom:0;left:0;width:100%;height:30px;background:url('temp/bg2.png') repeat-x left bottom;}
+        .desc img{width:auto;height:300px;}
         .map{height:300px;}
         #Map{height:300px;}
         #Map .markerOverlay{padding:10px;width:150px;font-size:14px;}
@@ -45,12 +45,11 @@
 </head>
 <body>
 <div class="wrap">
-    <div class="visual"><img src="./temp/s1.jpg" alt="" /></div>
+    <div class="visual"></div>
     <div class="desc">
-        <p>저희에게 가장 큰 선물인 도진이의 첫번째 생일을 맞이하게 되었습니다.</p>
-        <p>마음으로 언제나 함께 해주신 가족과 함께,세상에 태어나 첫번째 생일을 함께 하고자 합니다.</p>
-        <p>꼭 오셔서 멋지고 행복한 아이가 되도록 좋은 말씀 해주시고, 함께 웃어주셨으면 합니다.</p>
-        <p class="sign">아빠 원용봉, 엄마 홍미영 올림</p>
+        <div class="top"></div>
+        <img src="temp/desc.jpg" alt="">
+        <div class="bot"></div>
     </div>
 
     <!-- Slider main container -->
