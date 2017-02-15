@@ -23,16 +23,17 @@
         .bot{position:absolute;bottom:0;left:0;width:100%;height:30px;background:url('temp/bg2.png') repeat-x left bottom;}
 
         .wrap{padding-bottom:50px;}
-        .visual{height:400px;background:url('temp/s3.jpg') no-repeat left top;background-size:auto 400px;}
+        .visual{height:400px;background:url('temp/s5.jpg') no-repeat center top;background-size:auto 400px;}
         .visual img{width:100%; height:auto;}
-        .desc{position:relative;padding:15px 0;background-color: #f5f5f5;background:url('temp/bg_desc.gif') repeat-x;text-align:center;background-size:auto 300px;}
+        .desc{position:relative;box-sizing:border-box;height:315px;overflow:hidden;padding-top:15px;background-color: #f5f5f5;background:url('temp/bg_desc.gif') repeat-x left 15px;text-align:center;background-size:auto 300px;}
         .desc img{width:auto;height:300px;}
 
 
-        .map{margin:0 auto;width:100%;height:300px;padding-bottom:20px;background-color: #f5f5f5;}
+        .map{margin:0 auto;position:relative;width:100%;height:300px;padding-bottom:20px;background-color: #f5f5f5;}
         #Map{margin:0 auto;width:90%;height:300px;background-color: #f5f5f5;border:1px solid #ccc;}
         #Map .markerOverlay{padding:10px;width:150px;font-size:14px;}
         #Map .markerOverlay p{font-size:12px;}
+        .mapArea{position:relative;}
 
         /*! 전화번호 */
         .phone{position:fixed;bottom:0;left:0;width:100%;display:flex;background-color: #fff;}
@@ -49,7 +50,7 @@
         .photo img{width:auto; height:225px;}
 
 
-        .photozone{position:relative;padding:50px 0;}
+        .photozone{position:relative;padding:50px 0 30px;}
         .photozone h2{padding-bottom:20px;text-align:center;}
         .marsony{width:100%;box-sizing:border-box;}
         .marsony img{width:100%; height:auto;border:1px solid #ccc;}
@@ -63,13 +64,11 @@
     <div class="desc">
         <div class="top"></div>
         <img src="temp/desc.jpg" alt="">
-        <div class="bot"></div>
     </div>
 
     <!-- Slider main container -->
     <div class="photozone">
         <div class="top"></div>
-        <div class="bot"></div>
         <h2><img src="temp/tac2.png" alt=""></h2>
         <div class="marsony">
             <ul class="grid">
@@ -101,67 +100,37 @@
         });
     });
     </script>
-<!--
-    <div class="photo">
-        <div class="swiper-container">
-            &lt;!&ndash; Additional required wrapper &ndash;&gt;
-            <div class="swiper-wrapper">
-                &lt;!&ndash; Slides &ndash;&gt;
-                <div class="swiper-slide"><img src="temp/r3.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="temp/t1.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="temp/r2.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="temp/t3.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="temp/t2.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="temp/t4.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="temp/t5.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="temp/r1.jpg" alt=""></div>
-            </div>
-            &lt;!&ndash; If we need pagination &ndash;&gt;
-            <div class="swiper-pagination"></div>
+    <div class="mapArea">
+        <div class="top"></div>
+        <h2 style="padding:50px 0 20px;text-align:center;background-color: #f5f5f5;"><img src="temp/tac3.png" alt=""></h2>
+        <div class="map">
 
-            &lt;!&ndash; If we need navigation buttons &ndash;&gt;
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div id="Map"></div>
+            <script type="text/javascript">
+                $(function(){
+                    var mapOptions = {
+                        center: new naver.maps.LatLng(37.5761214, 126.8891256),
+                        zoom: 10
+                    };
+                    var map = new naver.maps.Map('Map', mapOptions);
+                    var marker = new naver.maps.Marker({
+                        position: new naver.maps.LatLng(37.5761214, 126.8891256),
+                        map: map
+                    });
+                    var contentString = [
+                        '<div class="markerOverlay">',
+                        '<h4>용산드마리스</h4>',
+                        '<p class="address">서울 용산구 청파로 74(한강로동 18-9), 전자랜드 신관5층</p>',
+                        '<p class="tel">문의전화 : <a href="tel:15882520">1588-2520</a></p>',
+                        '</div>'
+                    ].join('');
+                    var infowindow = new naver.maps.InfoWindow({
+                        content: contentString,
+                    });
+                    infowindow.open(map, marker);
+                });
+            </script>
         </div>
-    </div>
-    <script>
-        $(function(){
-            var mySwiper = new Swiper('.swiper-container', {
-                speed: 400,
-                spaceBetween: 100,
-                autoHeight:true
-            });
-        });
-
-    </script>-->
-
-    <h2 style="padding:20px 0;text-align:center;background-color: #f5f5f5;"><img src="temp/tac3.png" alt=""></h2>
-    <div class="map">
-        <div id="Map"></div>
-        <script type="text/javascript">
-            $(function(){
-                var mapOptions = {
-                    center: new naver.maps.LatLng(37.5761214, 126.8891256),
-                    zoom: 10
-                };
-                var map = new naver.maps.Map('Map', mapOptions);
-                var marker = new naver.maps.Marker({
-                    position: new naver.maps.LatLng(37.5761214, 126.8891256),
-                    map: map
-                });
-                var contentString = [
-                    '<div class="markerOverlay">',
-                    '<h4>용산드마리스</h4>',
-                    '<p class="address">서울 용산구 청파로 74(한강로동 18-9), 전자랜드 신관5층</p>',
-                    '<p class="tel">문의전화 : <a href="tel:15882520">1588-2520</a></p>',
-                    '</div>'
-                ].join('');
-                var infowindow = new naver.maps.InfoWindow({
-                    content: contentString,
-                });
-                infowindow.open(map, marker);
-            });
-        </script>
     </div>
     <style>
         .maplink a{display:inline-block;box-sizing:border-box;padding:12px 0;width:100%;height:40px; background: #333; color:#fff;font-size:14px;line-height:1;text-align:center;}
