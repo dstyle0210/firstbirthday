@@ -66,7 +66,7 @@
 <body>
 <div style="display:none;">
     <img src="temp/ss2.jpg" alt="">
-    <p>꼭 오셔서 행복한 아이가 되도록, 좋은 말씀 해주세요.</p>
+    <p>꼭 오셔서 행복한 아이가 되도록 함께 해주세요.</p>
 </div>
 <div class="wrap">
     <div class="visual"></div>
@@ -118,17 +118,17 @@
             <script type="text/javascript">
                 $(function(){
                     var mapOptions = {
-                        center: new naver.maps.LatLng(37.5761214, 126.8891256),
+                        center: new naver.maps.LatLng(37.532783, 126.958436),
                         zoom: 10
                     };
                     var map = new naver.maps.Map('Map', mapOptions);
                     var marker = new naver.maps.Marker({
-                        position: new naver.maps.LatLng(37.5761214, 126.8891256),
+                        position: new naver.maps.LatLng(37.532783, 126.958436),
                         map: map
                     });
                     var contentString = [
                         '<div class="markerOverlay">',
-                        '<h4>용산드마리스</h4>',
+                        '<h4>용산 드마리스</h4>',
                         '<p class="address">서울 용산구 청파로 74(한강로동 18-9), 전자랜드 신관5층</p>',
                         '<p class="tel">문의전화 : <a href="tel:15882520">1588-2520</a></p>',
                         '</div>'
@@ -139,6 +139,11 @@
                     infowindow.open(map, marker);
                 });
             </script>
+        </div>
+        <div style="padding:20px 5%;">
+            <p style="color:#333;line-height:1.5;font-weight:700;">용산 드마리스(전자회관 內)</p>
+            <p style="color:#666;line-height:1.3;">서울 용산구 청파로 74(한강로동 18-9), 전자랜드 신관5층</p>
+            <p style="color:#666;line-height:1.5;">문의전화 : <a href="tel:15882520" style="font-weight:700;">1588-2520</a></p>
         </div>
     </div>
     <style>
